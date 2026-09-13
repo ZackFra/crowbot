@@ -58,21 +58,12 @@ void setup() {
   pinMode(RIGHT_IR_SENSOR, INPUT_PULLUP);
 
   stop();
-
-  // pinMode(LEFT_MOTOR_BACKWARDS, OUTPUT);
-  // pinMode(LEFT_MOTOR_FORWARDS, OUTPUT);
-  // pinMode(RIGHT_MOTOR_BACKWARDS, OUTPUT);
-  // pinMode(RIGHT_MOTOR_FORWARDS, OUTPUT);
 }
 
 void loop() {
 
   int leftIRSensor = readIRSensor(LEFT_IR_SENSOR);
   int rightIRSensor = readIRSensor(RIGHT_IR_SENSOR);
-
-  Serial.print(leftIRSensor);
-  Serial.print(" ");
-  Serial.println(rightIRSensor);
 
   if (leftIRSensor == 1 && rightIRSensor == 1) {
     moveForward();
