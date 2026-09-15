@@ -75,15 +75,6 @@ void moveRight() {
   analogWrite(RIGHT_MOTOR_FORWARDS, BASE_SPEED);
 }
 
-void setup() {
-  Serial.begin(115200);
-  
-  pinMode(LEFT_IR_SENSOR, INPUT_PULLUP);
-  pinMode(RIGHT_IR_SENSOR, INPUT_PULLUP);
-
-  stop();
-}
-
 void bangBang() {
 
   int leftIRSensor = readIRSensor(LEFT_IR_SENSOR);
@@ -170,6 +161,15 @@ void pid() {
 
   delay(10);
 
+}
+
+void setup() {
+  Serial.begin(115200);
+  
+  pinMode(LEFT_IR_SENSOR, INPUT_PULLUP);
+  pinMode(RIGHT_IR_SENSOR, INPUT_PULLUP);
+
+  stop();
 }
 
 void loop() {
